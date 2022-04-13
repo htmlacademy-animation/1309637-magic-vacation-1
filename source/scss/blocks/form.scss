@@ -29,6 +29,44 @@
   }
 }
 
+.form__field-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex: none;
+  margin-right: 3rem;
+  width: calc(100% - 21rem);
+
+  @media (min-width: $stop-scaling) {
+    margin-right: 30px;
+    width: calc(100% - 210px);
+  }
+
+  @media (orientation: portrait) {
+    margin-right: 1rem;
+    width: calc(100% - 5rem);
+  }
+
+  @media (max-width: $tablet) and (orientation: landscape) {
+    width: calc(100% - 9rem);
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    margin-right: 1rem;
+    width: calc(100% - 5rem);
+  }
+}
+
+.form__field-animated {
+  width: 0;
+  overflow: hidden;
+
+  transition: width 0.3s ease-out;
+
+  .active & {
+    width: 100%;
+  }
+}
+
 .form__field {
   flex: none;
   margin-right: 3rem;
@@ -76,6 +114,10 @@
     height: 4rem;
     font-size: 1.6rem;
   }
+}
+
+.form__field--text {
+  width: 100%;
 }
 
 .form__button {
