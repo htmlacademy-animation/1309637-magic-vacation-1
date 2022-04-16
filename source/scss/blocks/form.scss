@@ -57,13 +57,27 @@
 }
 
 .form__field-animated {
-  width: 0;
+  width: 11.2rem;
   overflow: hidden;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: width 0.5s ease-out, opacity 0.2s;
 
-  transition: width 0.3s ease-out;
+  @media (min-width: $stop-scaling) {
+    padding: 0 56px;
+  }
+
+  @media (orientation: portrait) {
+    padding: 0 2.5rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    padding: 0 2.5rem;
+  }
 
   .active & {
     width: 100%;
+    opacity: 1;
   }
 }
 

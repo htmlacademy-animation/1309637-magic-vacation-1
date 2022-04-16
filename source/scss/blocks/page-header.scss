@@ -27,7 +27,6 @@
 }
 
 .page-header__logo {
-  @include hover;
   position: relative;
   flex: none;
   top: -0.5rem;
@@ -35,6 +34,16 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-2rem);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.32, 0.98, 0.59, 0.99);
+
+  .is-loaded & {
+    @include hover;
+    transform: translateX(0);
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -130,6 +139,12 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.32, 0.98, 0.59, 0.99);
+
+  .is-loaded & {
+    opacity: 1;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -268,7 +283,12 @@
 
     &.active {
       &::after {
-        width: 100%;
+        width: 0;
+        left: 0;
+
+        .is-loaded & {
+          width: 100%;
+        }
       }
     }
 

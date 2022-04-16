@@ -33,8 +33,12 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transform: scale(0);
+  transition: width 0.3s, color 0.3s, transform 0.3s 0.2s cubic-bezier(0.39, 0.84, 0.65, 1.44);
 
-  transition: all 0.3s;
+  .is-loaded & {
+    transform: scale(1);
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -190,7 +194,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   opacity: 0;
-  transform: translateY(3px);
+  transform: translateY(0.5rem);
   transition: color 0.3s, opacity 0.3s, transform 0.3s 0.3s;
 
   @media (min-width: $stop-scaling) {
