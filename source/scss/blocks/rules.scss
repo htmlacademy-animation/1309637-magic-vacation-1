@@ -120,7 +120,7 @@
 .rules__item {
   position: relative;
   margin: 0 0 6.2rem;
-  padding-top: 0.6rem;
+  padding-top: 1.6rem;
   padding-left: 6.5rem;
   break-inside: avoid;
 
@@ -148,7 +148,7 @@
     content: counter(li);
     counter-increment: li;
     position: absolute;
-    top: 0;
+    top: 1rem;
     left: 0;
     width: 4.5rem;
     height: 4.5rem;
@@ -159,6 +159,14 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    color: rgba(255, 255, 255, 0);
+    transform: scale(0);
+    animation-name: bullit-scale, bullit-color;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function:
+      cubic-bezier(0.32, 0.98, 0.58, 1.19),
+      cubic-bezier(0.81, 0, 0.92, 0.24);
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -179,10 +187,37 @@
 
   p {
     margin: 0;
+    opacity: 0;
+    transform: translateX(2rem);
+    animation-name: rules-text-translate, rules-text-opacity;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out, ease-in;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
     }
+  }
+}
+
+.rules__item:nth-child(2) {
+  &::before,
+  p {
+    animation-delay: 0.3s;
+  }
+}
+
+.rules__item:nth-child(3) {
+  &::before,
+  p {
+    animation-delay: 0.55s;
+  }
+}
+
+.rules__item:nth-child(4) {
+  &::before,
+  p {
+    animation-delay: 0.72s;
   }
 }
 
@@ -209,5 +244,70 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+
+  &::before {
+    left: auto;
+    right: 0;
+    width: 40%;
+    transform: translate(0, -50%);
+
+    opacity: 0;
+    animation-name: rules-link-bg;
+    animation-duration: 0.4s;
+    animation-delay: 0.72s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.28, 0.77, 0.55, 1);
+  }
+}
+
+.rules__link-text {
+  opacity: 0;
+  animation-name: rules-link-opacity;
+  animation-duration: 0.3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes bullit-scale {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bullit-color {
+  to {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+@keyframes rules-text-translate {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rules-text-opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rules-link-bg {
+  from {
+    opacity: 1;
+    width: 30%;
+  }
+
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes rules-link-opacity {
+  to {
+    opacity: 1;
   }
 }
