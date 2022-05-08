@@ -161,7 +161,7 @@
     text-align: center;
     color: rgba(255, 255, 255, 0);
     transform: scale(0);
-    animation-name: bullit-scale, bullit-color;
+    animation-name: bullit-appear, color-appear;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function:
@@ -189,7 +189,7 @@
     margin: 0;
     opacity: 0;
     transform: translateX(2rem);
-    animation-name: rules-text-translate, rules-text-opacity;
+    animation-name: slide-left, text-appear;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out, ease-in;
@@ -253,7 +253,7 @@
     transform: translate(0, -50%);
 
     opacity: 0;
-    animation-name: rules-link-bg;
+    animation-name: button-zoom-left;
     animation-duration: 0.4s;
     animation-delay: 0.72s;
     animation-fill-mode: forwards;
@@ -263,38 +263,38 @@
 
 .rules__link-text {
   opacity: 0;
-  animation-name: rules-link-opacity;
+  animation-name: text-appear;
   animation-duration: 0.3s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
 }
 
-@keyframes bullit-scale {
+@keyframes bullit-appear {
   to {
     transform: scale(1);
   }
 }
 
-@keyframes bullit-color {
+@keyframes color-appear {
   to {
     color: rgba(255, 255, 255, 1);
   }
 }
 
-@keyframes rules-text-translate {
+@keyframes slide-left {
   to {
     transform: translateX(0);
   }
 }
 
-@keyframes rules-text-opacity {
+@keyframes text-appear {
   to {
     opacity: 1;
   }
 }
 
-@keyframes rules-link-bg {
+@keyframes button-zoom-left {
   from {
     opacity: 1;
     width: 30%;
@@ -303,11 +303,5 @@
   to {
     opacity: 1;
     width: 100%;
-  }
-}
-
-@keyframes rules-link-opacity {
-  to {
-    opacity: 1;
   }
 }
