@@ -59,6 +59,18 @@
 
     .page-header--menu-opened & {
       color: $c-dark;
+
+      .theme-active[data-theme="purple"] & {
+        color: $c-purple;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        color: $c-blue;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        color: $c-cyan;
+      }
     }
   }
 
@@ -70,6 +82,18 @@
 
     .page-header--menu-opened & {
       color: $c-dark;
+
+      .theme-active[data-theme="purple"] & {
+        color: $c-purple;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        color: $c-blue;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        color: $c-cyan;
+      }
     }
   }
 
@@ -106,12 +130,36 @@
     right: 0.8rem;
     height: 1px;
     background-color: $c-dark;
+
+    .theme-active[data-theme="purple"] & {
+      background-color: $c-purple;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      background-color: $c-blue;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      background-color: $c-cyan;
+    }
   }
 
   &::before {
     top: 0.9rem;
     width: 1rem;
     box-shadow: 0 0.6rem 0 0 $c-dark;
+
+    .theme-active[data-theme="purple"] & {
+      box-shadow: 0 0.6rem 0 0 $c-purple;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      box-shadow: 0 0.6rem 0 0 $c-blue;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      box-shadow: 0 0.6rem 0 0 $c-cyan;
+    }
   }
 
   &::after {
@@ -128,6 +176,12 @@
       width: 2.6rem;
       height: 2px;
       box-shadow: none;
+
+      .theme-active[data-theme="purple"] &,
+      .theme-active[data-theme="blue"] &,
+      .theme-active[data-theme="cyan"] & {
+        box-shadow: none;
+      }
     }
 
     &::after {
@@ -218,12 +272,36 @@
       flex-direction: column;
       align-items: flex-start;
       padding-top: 3.8rem;
+
+      .theme-active[data-theme="purple"] & {
+        color: $c-purple;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        color: $c-blue;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        color: $c-cyan;
+      }
     }
 
     @media (max-width: $mobile) and (orientation: landscape) {
       flex-direction: column;
       align-items: flex-start;
       padding-top: 2rem;
+
+      .theme-active[data-theme="purple"] & {
+        color: $c-purple;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        color: $c-blue;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        color: $c-cyan;
+      }
     }
   }
 
@@ -272,12 +350,36 @@
         left: 0;
         right: 0;
         background-color: $c-dark;
+
+        .theme-active[data-theme="purple"] & {
+          background-color: $c-purple;
+        }
+
+        .theme-active[data-theme="blue"] & {
+          background-color: $c-blue;
+        }
+
+        .theme-active[data-theme="cyan"] & {
+          background-color: $c-cyan;
+        }
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
         left: 0;
         right: 0;
         background-color: $c-dark;
+
+        .theme-active[data-theme="purple"] & {
+          background-color: $c-purple;
+        }
+
+        .theme-active[data-theme="blue"] & {
+          background-color: $c-blue;
+        }
+
+        .theme-active[data-theme="cyan"] & {
+          background-color: $c-cyan;
+        }
       }
     }
 
@@ -297,11 +399,35 @@
       color: $c-purple;
       outline: none;
 
+      .theme-active[data-theme="purple"] & {
+        color: $c-dark;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        color: $c-cyan;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        color: $c-blue;
+      }
+
       &::after {
         left: 0;
         width: 100%;
         opacity: 1;
         background-color: $c-purple;
+
+        .theme-active[data-theme="purple"] & {
+          background-color: $c-dark;
+        }
+
+        .theme-active[data-theme="blue"] & {
+          background-color: $c-cyan;
+        }
+
+        .theme-active[data-theme="cyan"] & {
+          background-color: $c-blue;
+        }
       }
     }
   }
