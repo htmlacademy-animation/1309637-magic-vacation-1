@@ -1,0 +1,233 @@
+.intro__title,
+.intro__date,
+.slider__item-title,
+.prizes__title,
+.rules__title,
+.game__title {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > span {
+    display: flex;
+    margin-right: 0.2em;
+    clip-path: inset(-100vw -100vw 0 -100vw);
+    opacity: 0;
+    animation-name: show;
+    animation-fill-mode: forwards;
+  }
+
+  & > span > span {
+    animation-name: slide;
+    animation-fill-mode: forwards;
+  }
+}
+
+.intro__title {
+  & > span {
+    animation-delay: 0.6s;
+  }
+
+  & > span span {
+    animation-delay: 0.6s;
+    animation-duration: 0.5s;
+  }
+
+  & > span:nth-child(2),
+  & > span:nth-child(2) span {
+    animation-delay: 0.8s;
+  }
+
+  & > span:nth-child(2) span {
+    animation-delay: 0.8s;
+    animation-duration: 0.3s;
+  }
+
+  & > span:nth-child(1) {
+    span:nth-child(1),
+    span:nth-child(5),
+    span:nth-child(9),
+    span:nth-child(11) {
+      transform: translate3d(0, 200%, 0);
+    }
+
+    span:nth-child(2),
+    span:nth-child(4),
+    span:nth-child(6) {
+      transform: translate3d(0, 150%, 0);
+    }
+
+    span:nth-child(3),
+    span:nth-child(7),
+    span:nth-child(10),
+    span:nth-child(12) {
+      transform: translate3d(0, 80%, 0);
+    }
+
+    span:nth-child(8) {
+      transform: translate3d(0, 250%, 0);
+    }
+  }
+
+  & > span:nth-child(2) {
+    span:nth-child(1),
+    span:nth-child(5) {
+      transform: translate3d(0, 250%, 0);
+    }
+
+    span:nth-child(4) {
+      transform: translate3d(0, 80%, 0);
+    }
+
+    span:nth-child(6) {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    span:nth-child(2) {
+      transform: translate3d(0, 280%, 0);
+    }
+
+    span:nth-child(3) {
+      transform: translate3d(0, 200%, 0);
+    }
+  }
+}
+
+.intro__date {
+  & > span {
+    animation-delay: 1.2s;
+  }
+
+  & > span span {
+    animation-duration: 0.5s;
+  }
+
+  & > span:nth-child(1) {
+    span:nth-child(1) {
+      transform: translate3d(0, 150%, 0);
+    }
+
+    span:nth-child(2) {
+      transform: translate3d(0, 130%, 0);
+    }
+  }
+
+  & > span:nth-child(2) {
+    span {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  & > span:nth-child(3) {
+    span:nth-child(1) {
+      transform: translate3d(0, 200%, 0);
+    }
+
+    span:nth-child(2) {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    span:nth-child(3),
+    span:nth-child(4) {
+      transform: translate3d(0, 150%, 0);
+    }
+
+    span:nth-child(5) {
+      transform: translate3d(0, 250%, 0);
+    }
+  }
+
+  & > span:nth-child(4) {
+    span {
+      transform: translate3d(0, 150%, 0);
+    }
+  }
+
+  & > span:nth-child(5) {
+    span:nth-child(1) {
+      transform: translate3d(0, 80%, 0);
+    }
+
+    span:nth-child(2) {
+      transform: translate3d(0, 200%, 0);
+    }
+
+    span:nth-child(3) {
+      transform: translate3d(0, 150%, 0);
+    }
+
+    span:nth-child(4) {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}
+
+.slider__item-title,
+.prizes__title,
+.rules__title,
+.game__title {
+  & > span span {
+    animation-duration: 0.5s;
+  }
+}
+
+.slider__item-title,
+.prizes__title {
+  & > span {
+    span:nth-child(4n - 3),
+    span:nth-child(5n) {
+      transform: translate3d(0, 190%, 0);
+    }
+
+    span:nth-child(4n - 2),
+    span:nth-child(4n) {
+      transform: translate3d(0, 140%, 0);
+    }
+
+    span:nth-child(4n - 1) {
+      transform: translate3d(0, 90%, 0);
+    }
+  }
+}
+
+.rules__title {
+  & > span {
+    span:nth-child(7n),
+    span:nth-child(7n - 3) {
+      transform: translate3d(0, 80%, 0);
+    }
+
+    span:nth-child(7n - 1),
+    span:nth-child(7n - 4) {
+      transform: translate3d(0, 120%, 0);
+    }
+
+    span:nth-child(7n - 2),
+    span:nth-child(7n - 5) {
+      transform: translate3d(0, 160%, 0);
+    }
+
+    span:nth-child(7n - 6) {
+      transform: translate3d(0, 300%, 0);
+    }
+  }
+}
+
+.game__title {
+  & > span {
+    span:nth-child(4n - 3) {
+      transform: translate3d(0, 300%, 0);
+    }
+
+    span:nth-child(4n - 2) {
+      transform: translate3d(0, 180%, 0);
+    }
+
+    span:nth-child(4n - 1) {
+      transform: translate3d(0, 80%, 0);
+    }
+
+    span:nth-child(4n) {
+      transform: translate3d(0, 130%, 0);
+    }
+  }
+}
