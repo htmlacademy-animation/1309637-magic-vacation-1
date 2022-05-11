@@ -35,6 +35,18 @@
   border-radius: 50%;
   transition: color 0.3s;
 
+  .theme-active[data-theme="purple"] & {
+    color: $c-purple;
+  }
+
+  .theme-active[data-theme="blue"] & {
+    color: $c-cyan;
+  }
+
+  .theme-active[data-theme="cyan"] & {
+    color: $c-blue;
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -73,6 +85,18 @@
   .social-block--active & {
     color: $c-purple;
 
+    .theme-active[data-theme="purple"] & {
+      color: $c-dark;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-blue;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-cyan;
+    }
+
     &::before {
       width: 112.5%;
       height: 112.5%;
@@ -83,9 +107,36 @@
     color: $c-light;
     outline: none;
 
+    .theme-active[data-theme="purple"] & {
+      color: $c-light;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-light;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-light;
+    }
+
     &::before {
       border-color: $c-purple;
       background-color: $c-purple;
+
+      .theme-active[data-theme="purple"] & {
+        border-color: $c-dark;
+        background-color: $c-dark;
+      }
+
+      .theme-active[data-theme="blue"] & {
+        border-color: $c-cyan;
+        background-color: $c-cyan;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        border-color: $c-blue;
+        background-color: $c-blue;
+      }
     }
 
     & + .social-block__list {
@@ -108,6 +159,16 @@
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+
+      .theme-active[data-theme="blue"] & {
+        border-color: $c-cyan;
+        background-color: $c-cyan;
+      }
+
+      .theme-active[data-theme="cyan"] & {
+        border-color: $c-blue;
+        background-color: $c-blue;
+      }
     }
   }
 }
@@ -206,15 +267,57 @@
   @media (max-width: $tablet) and (orientation: portrait) {
     color: $c-light;
     background-color: $c-dark;
+
+    .theme-active[data-theme="purple"] & {
+      color: $c-light;
+      background-color: $c-purple;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-light;
+      background-color: $c-blue;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-light;
+      background-color: $c-cyan;
+    }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     color: $c-light;
     background-color: $c-dark;
+
+    .theme-active[data-theme="purple"] & {
+      color: $c-light;
+      background-color: $c-purple;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-light;
+      background-color: $c-blue;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-light;
+      background-color: $c-cyan;
+    }
   }
 
   &:hover {
     color: $c-purple;
+
+    .theme-active[data-theme="purple"] & {
+      color: $c-dark;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-cyan;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-blue;
+    }
   }
 
   &:focus {
@@ -222,6 +325,21 @@
     background-color: $c-light;
     border-color: $c-purple;
     outline: none;
+
+    .theme-active[data-theme="purple"] & {
+      color: $c-dark;
+      border-color: $c-dark;
+    }
+
+    .theme-active[data-theme="blue"] & {
+      color: $c-cyan;
+      border-color: $c-cyan;
+    }
+
+    .theme-active[data-theme="cyan"] & {
+      color: $c-blue;
+      border-color: $c-blue;
+    }
   }
 
   &:active,

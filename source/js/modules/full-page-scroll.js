@@ -18,6 +18,7 @@ export default class FullPageScroll {
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.curtainElement = document.querySelector(`.screen__curtain`);
+    this.bodyElement = document.querySelector(`body`);
 
     this.activeScreen = 0;
     this.prevScreen = 0;
@@ -55,6 +56,11 @@ export default class FullPageScroll {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
+    if (this.activeScreen === ScreenNumber.STORY) {
+      this.bodyElement.classList.add(`theme-active`);
+      return;
+    }
+    this.bodyElement.classList.remove(`theme-active`);
   }
 
   changePageDisplay() {
@@ -64,12 +70,25 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    let isStoryToPrizes = this.prevScreen === ScreenNumber.STORY && this.activeScreen === ScreenNumber.PRIZES;
+    let isPrizesToRules = this.prevScreen === ScreenNumber.PRIZES && this.activeScreen === ScreenNumber.RULES;
     let timeout = 0;
+
     this.curtainElement.classList.remove(`showed`);
-    if (this.prevScreen === ScreenNumber.STORY && this.activeScreen === ScreenNumber.PRIZES) {
+    if (isStoryToPrizes) {
       this.curtainElement.classList.add(`showed`);
       timeout = this.CURTAIN_TIMEOUT;
     }
+
+    if (isPrizesToRules) {
+      let footerNote = this.screenElements[this.prevScreen].querySelector(`.screen__footer-note`);
+      footerNote.classList.add(`hide`);
+      timeout = this.CURTAIN_TIMEOUT;
+      setTimeout(() => {
+        footerNote.classList.remove(`hide`);
+      }, timeout);
+    }
+
     setTimeout(() => {
       this.screenElements.forEach((screen) => {
         screen.classList.add(`screen--hidden`);
