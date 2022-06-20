@@ -331,6 +331,16 @@
   }
 }
 
+.prizes__columns {
+  opacity: 0;
+  animation: show 0.2s 3s forwards;
+}
+
+.prizes__chair {
+  opacity: 0;
+  animation: show 0.4s 2.8s forwards;
+}
+
 .prizes__fern {
   opacity: 0;
   animation: show 0.3s 2.9s forwards;
