@@ -331,6 +331,10 @@
   }
 }
 
+.prizes__airship {
+  animation: hide 0.4s 3s forwards;
+}
+
 .prizes__columns {
   opacity: 0;
   animation: show 0.2s 3s forwards;
