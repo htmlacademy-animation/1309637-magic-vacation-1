@@ -130,7 +130,7 @@
     .prizes__icon {
       position: relative;
       left: -5.9rem;
-      bottom: -1.4rem;
+      bottom: -0.5rem;
       width: 26.8rem;
 
       @media (min-width: $stop-scaling) {
@@ -328,5 +328,55 @@
       width: 0.5rem;
       height: 0.5rem;
     }
+  }
+}
+
+.prizes__airship {
+  animation: hide 0.4s 3s forwards;
+}
+
+.prizes__columns {
+  opacity: 0;
+  animation: show 0.2s 3s forwards;
+}
+
+.prizes__chair {
+  opacity: 0;
+  animation: show 0.4s 2.8s forwards;
+}
+
+.prizes__fern {
+  opacity: 0;
+  animation: show 0.3s 2.9s forwards;
+}
+
+.prizes__fern-wrapper {
+  transform-origin: 150px 330px;
+  animation: fern-move 1.5s 2.9s forwards;
+}
+
+@keyframes fern-move {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  25% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-7deg);
+  }
+
+  75% {
+    transform: rotate(0);
+  }
+
+  90% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(0);
   }
 }
