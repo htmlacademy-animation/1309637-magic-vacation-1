@@ -135,7 +135,7 @@
 
       @media (min-width: $stop-scaling) {
         left: -59px;
-        bottom: -14px;
+        bottom: -6px;
         width: 268px;
       }
 
@@ -379,4 +379,20 @@
   100% {
     transform: rotate(0);
   }
+}
+
+.prizes__icon-img {
+  opacity: 0;
+}
+
+.prizes__item:first-child .prizes__icon-img {
+  animation: show 0.4s forwards;
+}
+
+.prizes__item:nth-child(2) .prizes__icon-img {
+  animation: show 0.4s 0.2s forwards;
+}
+
+.prizes__item:nth-child(3) .prizes__icon-img {
+  animation: show 0.4s 0.4s forwards;
 }
