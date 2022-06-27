@@ -123,3 +123,9 @@ img {
     transform: translate3d(0, 0, 0) rotate(0);
   }
 }
+
+@keyframes scale {
+  to {
+    transform: scale(1);
+  }
+}
