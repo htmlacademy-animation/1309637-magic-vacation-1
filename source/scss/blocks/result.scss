@@ -498,3 +498,20 @@
     }
   }
 }
+
+.result__title-icon--1,
+.result__title-icon--2 {
+  transform: scale(1.1);
+  animation: scale 0.5s forwards;
+}
+
+.result__title-icon path {
+  stroke-dasharray: 0, 100;
+  animation: stroke 0.5s forwards;
+}
+
+@keyframes stroke {
+  to {
+    stroke-dasharray: 100, 0;
+  }
+}
