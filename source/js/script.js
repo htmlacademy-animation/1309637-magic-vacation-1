@@ -11,6 +11,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll.js';
 import accentWords from './modules/accent-words.js';
 import prizes from './modules/prizes';
+import timeCounter from './modules/time-counter';
 
 // init modules
 loadInit();
@@ -24,6 +25,7 @@ form();
 social();
 accentWords();
 prizes();
+timeCounter();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
