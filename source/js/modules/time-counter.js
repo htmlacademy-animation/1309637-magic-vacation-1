@@ -7,6 +7,7 @@ export default () => {
   const DEFAULT_SECONDS = `00`;
   const GAME_HASH = `#game`;
 
+  const gameScreen = document.querySelector(`.screen--game`);
   const resultScreens = document.querySelectorAll(`.screen--result`);
   const minutesCounter = document.querySelector(`.game__counter-minutes`);
   const secondsCounter = document.querySelector(`.game__counter-seconds`);
@@ -65,5 +66,5 @@ export default () => {
 
   resetButton.addEventListener(`click`, run);
   startButton.addEventListener(`click`, run);
-  navGameLink.addEventListener(`click`, run);
+  navGameLink.addEventListener(`click`, () => !gameScreen.classList.contains(`active`) && run());
 };
