@@ -1,7 +1,10 @@
 export default () => {
   const MAX_TIME = 300000;
   const FPS_INTERVAL = 1000;
-  const DEFAULT_VALUE = `00`;
+  const MS_PER_MIN = 60000;
+  const MS_PER_SEC = 1000;
+  const DEFAULT_MINUTES = `05`;
+  const DEFAULT_SECONDS = `00`;
   const GAME_HASH = `#game`;
 
   const resultScreens = document.querySelectorAll(`.screen--result`);
@@ -12,11 +15,14 @@ export default () => {
   const navGameLink = document.querySelector(`.js-menu-link[href="${GAME_HASH}"]`);
 
   const draw = (time) => {
-    const minutes = Math.floor(time / 60000);
-    const seconds = Math.floor((time % 60000) / 1000);
+    const minutes = Math.floor((time + MS_PER_SEC) / MS_PER_MIN);
+    const seconds = Math.floor((time + MS_PER_SEC) / MS_PER_SEC % 60);
 
-    minutesCounter.textContent = minutes < 10 ? `0${minutes}` : minutes;
-    secondsCounter.textContent = seconds < 10 ? `0${seconds}` : seconds;
+    const currentMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const currentSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    minutesCounter.textContent = currentMinutes;
+    secondsCounter.textContent = currentSeconds;
   };
 
   const run = () => {
@@ -27,12 +33,15 @@ export default () => {
     let start = Date.now();
     let elapsed;
 
+    minutesCounter.textContent = DEFAULT_MINUTES;
+    secondsCounter.textContent = DEFAULT_SECONDS;
+
     const tick = () => {
       requestId = requestAnimationFrame(tick);
 
       now = Date.now();
       elapsed = now - then;
-      diff = now - start;
+      diff = MAX_TIME - (now - start);
 
       if (elapsed > FPS_INTERVAL) {
         then = now - (elapsed % FPS_INTERVAL);
@@ -40,13 +49,11 @@ export default () => {
       }
 
       if (
-        diff > MAX_TIME ||
+        diff <= 0 ||
         window.location.hash !== GAME_HASH ||
         Array.from(resultScreens).some((el) => el.classList.contains(`screen--show`))
       ) {
         cancelAnimationFrame(requestId);
-        minutesCounter.textContent = DEFAULT_VALUE;
-        secondsCounter.textContent = DEFAULT_VALUE;
       }
     };
     requestId = requestAnimationFrame(tick);
