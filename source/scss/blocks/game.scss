@@ -24,6 +24,7 @@
 }
 
 .game__header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +72,8 @@
 }
 
 .game__counter {
-  margin: 0;
+  position: absolute;
+  left: 100%;
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
@@ -84,10 +86,11 @@
   }
 
   @media (min-width: $tablet) {
-    margin-right: 5.6rem;
+    transform: translateX(-16.8rem);
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
+    transform: translateX(-8.4rem);
     margin-bottom: 1.8rem;
     font-size: 3.6rem;
   }
