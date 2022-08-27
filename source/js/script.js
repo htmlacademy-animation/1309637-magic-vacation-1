@@ -12,6 +12,7 @@ import FullPageScroll from './modules/full-page-scroll.js';
 import accentWords from './modules/accent-words.js';
 import prizes from './modules/prizes';
 import timeCounter from './modules/time-counter';
+import scenes from './modules/scenes';
 
 // init modules
 loadInit();
@@ -26,6 +27,7 @@ social();
 accentWords();
 prizes();
 timeCounter();
+scenes();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
