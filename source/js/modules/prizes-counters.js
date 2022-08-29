@@ -8,13 +8,17 @@ const FPS_INTERVAL = 12;
 const casesContainer = document.querySelector(`.prizes__item--cases .prizes__desc-counter`);
 const codesContainer = document.querySelector(`.prizes__item--codes .prizes__desc-counter`);
 
+const interpolate = (start, finish, length, part) => {
+  return Math.floor(((finish - start) / length) * part + start);
+};
+
 export const resetCounters = () => {
   casesContainer.textContent = CASES_START;
   codesContainer.textContent = CODES_START;
 };
 
 export const drawCases = (time) => {
-  const currentNumber = Math.floor(((CASES_FINISH - CASES_START) / COUNTER_TIME) * time + CASES_START);
+  const currentNumber = interpolate(CASES_START, CASES_FINISH, COUNTER_TIME, time);
   if (currentNumber > CASES_FINISH) {
     casesContainer.textContent = CASES_FINISH;
     return;
@@ -23,7 +27,7 @@ export const drawCases = (time) => {
 };
 
 export const drawCodes = (time) => {
-  const currentNumber = Math.floor(((CODES_FINISH - CODES_START) / COUNTER_TIME) * time + CODES_START);
+  const currentNumber = interpolate(CODES_START, CODES_FINISH, COUNTER_TIME, time);
   if (currentNumber > CODES_FINISH) {
     codesContainer.textContent = CODES_FINISH;
     return;

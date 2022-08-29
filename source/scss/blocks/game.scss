@@ -96,6 +96,7 @@
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
+    transform: translateX(-7rem);
     font-size: 3rem;
     margin-bottom: 2rem;
   }
