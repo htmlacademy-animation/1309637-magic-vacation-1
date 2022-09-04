@@ -130,7 +130,6 @@ export default class SeaCalfScene extends Scene2D {
         (entries) => entries.forEach((entry) => {
           if (entry.isIntersecting) {
             this.start();
-            observer.unobserve(this.canvas);
           }
         }),
         {threshold: 1},
