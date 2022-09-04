@@ -11878,7 +11878,6 @@ class SeaCalfScene extends _scene_2d_js__WEBPACK_IMPORTED_MODULE_1__["default"] 
         (entries) => entries.forEach((entry) => {
           if (entry.isIntersecting) {
             this.start();
-            observer.unobserve(this.canvas);
           }
         }),
         {threshold: 1},
