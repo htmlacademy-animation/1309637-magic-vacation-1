@@ -4,14 +4,14 @@ import Easing from './easing-utils.js';
 
 
 const IMAGES_URLS = Object.freeze({
-  crocodile: `../../img/module-4/lose-images/crocodile.png`,
-  drop: `../../img/module-4/lose-images/drop.png`,
-  flamingo: `../../../img/module-4/lose-images/flamingo.png`,
-  key: `../../img/module-4/lose-images/key.png`,
-  leaf: `../../img/module-4/lose-images/leaf.png`,
-  snowflake: `../../img/module-4/lose-images/snowflake.png`,
-  saturn: `../../img/module-4/lose-images/saturn.png`,
-  watermelon: `../../img/module-4/lose-images/watermelon.png`
+  crocodile: `../img/module-4/lose-images/crocodile.png`,
+  drop: `../img/module-4/lose-images/drop.png`,
+  flamingo: `../img/module-4/lose-images/flamingo.png`,
+  key: `../img/module-4/lose-images/key.png`,
+  leaf: `../img/module-4/lose-images/leaf.png`,
+  snowflake: `../img/module-4/lose-images/snowflake.png`,
+  saturn: `../img/module-4/lose-images/saturn.png`,
+  watermelon: `../img/module-4/lose-images/watermelon.png`
 });
 
 
